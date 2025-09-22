@@ -2,16 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sofa and Armchairs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
+        :root {
+            --primary-color: #ff6a00;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --card-background: #fff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+        }
+
         .navbar-custom {
-            background-color: #fff;
+            background-color: var(--card-background);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 1rem 2rem;
         }
 
         .navbar-brand img {
@@ -25,16 +37,12 @@
             transition: color 0.3s;
         }
 
-        .navbar-nav .nav-link.active {
-            color: #ff6a00 !important;
-        }
-
         .nav-link:hover {
-            color: #ff6a00;
+            color: var(--primary-color);
         }
 
-        .navbar-nav .nav-item:last-child .nav-link {
-            margin-right: 0;
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
         }
 
         .navbar-icons .nav-link {
@@ -42,12 +50,239 @@
             margin-left: 1rem;
         }
 
+        .hero-section {
+            background-color: #f0ede8;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            max-width: 40%;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 0 !important;
+        }
+
+        .hero-content {
+            padding: 1rem;
+            max-width: 55%;
+        }
+
+        .hero-content h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero-content p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .explore-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .explore-btn:hover {
+            background-color: #e65c00;
+            color: white;
+        }
+
+        .filter-section {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-section h5 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-section .form-control {
+            border-radius: 20px;
+            padding-left: 1rem;
+            border-right: none;
+        }
+
+        .filter-section .input-group .input-group-text {
+            background-color: var(--primary-color);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-left: none;
+            color: white;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .color-palette span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .color-palette span.active {
+            border-color: var(--primary-color);
+        }
+
+        .price-range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+            border-radius: 5px;
+        }
+
+        .price-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .price-range-slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .product-card {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            height: auto;
+            min-height: 300px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card-img {
+            width: 40%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .product-card-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-card-body {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .product-card-price {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .product-card-text {
+            font-size: 0.875rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .btn-add-cart,
+        .btn-buy-now {
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-add-cart {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-buy-now {
+            background-color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            color: white;
+        }
+
+        .show-more-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .show-more-btn:hover {
+            background-color: #e65c00;
+            color: white;
+        }
+
         .footer-main {
             background-color: #f7f7f7;
-            /* Light gray background */
             padding: 50px 0;
             color: #555;
-            /* Main text color */
         }
 
         .footer-logo img {
@@ -62,7 +297,6 @@
         .footer-contact i {
             margin-right: 10px;
             color: #ff6a00;
-            /* Orange color for icons */
         }
 
         .footer-links h5,
@@ -70,7 +304,6 @@
         .footer-newsletter h5 {
             font-weight: bold;
             color: #ff6a00;
-            /* Orange color for titles */
             margin-bottom: 20px;
         }
 
@@ -85,7 +318,6 @@
             color: #555;
             text-decoration: none;
             transition: color 0.3s;
-
         }
 
         .footer-links a:hover,
@@ -128,6 +360,197 @@
             color: #777;
             text-decoration: none;
             margin-left: 20px;
+        }
+
+        /* Mobile Responsiveness Fixes */
+        @media (max-width: 991.98px) {
+            .filter-section {
+                display: block !important; /* Always show filter section */
+                position: static;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn-filter {
+                display: none; /* Hide filter toggle button */
+            }
+
+            .hero-section {
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .product-card {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .product-card-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .product-card-body {
+                padding: 1rem;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column;
+            }
+
+            .footer-bottom div {
+                margin-left: 0 !important;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                text-align: center;
+            }
+
+            .navbar-custom {
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-brand img {
+                height: 30px;
+            }
+
+            .navbar-icons .nav-link {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+            }
+
+            .product-container {
+                padding: 15px;
+            }
+
+            .row.px-5 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .product-title {
+                font-size: 1.8rem;
+            }
+
+            .price {
+                font-size: 1.5rem;
+            }
+
+            .thumbnail-list {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .thumbnail-list li {
+                margin: 5px;
+            }
+
+            .thumbnail-list img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-main {
+                padding: 30px 0;
+                text-align: center;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom a {
+                margin: 5px 0;
+                display: block;
+                text-align: center;
+            }
+
+            .footer-contact p {
+                margin-bottom: 8px;
+                text-align: center;
+            }
+
+            .footer-links, .footer-social, .footer-newsletter {
+                margin-bottom: 25px;
+                text-align: center;
+            }
+
+            .breadcrumb-container .container {
+                padding: 0 15px;
+            }
+
+            .nav-tabs .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .btn-add-to-cart, .btn-buy-now {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            /* Fix for filter section on mobile */
+            .filter-section {
+                padding: 1rem;
+            }
+
+            .color-palette {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .thumbnail-list img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .navbar-nav .nav-link {
+                margin-right: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-newsletter .input-group .btn {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .footer-logo img {
+                max-height: 40px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .product-card-img {
+                height: 180px;
+            }
+
+            .btn-add-cart, .btn-buy-now {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .filter-section {
+                position: sticky;
+                top: 20px;
+            }
         }
     </style>
 </head>
@@ -180,7 +603,258 @@
         </div>
     </nav>
 
+    <div class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="text-secondary text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-secondary text-decoration-none">Category</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">List of Products</li>
+            </ol>
+        </nav>
 
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="hero-section">
+                    <img src="assets/saleimg1.png" class="hero-image" alt="Sale on Sofas">
+                    <div class="hero-content">
+                        <div class="fw-bold fs-6 mb-2">Sale Off</div>
+                        <h1 class="display-5 fw-bold mb-3">Sofas and Armchairs</h1>
+                        <p class="mb-4">Relax, get comfortable and let yourself go. Once you try one of these sofas and armchairs you won't want any others. May the style be with you!</p>
+                        <a href="#" class="explore-btn d-inline-flex align-items-center">
+                            EXPLORE ALL ITEMS <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <!-- Filter section is now always visible on mobile -->
+                <div class="filter-section">
+                    <div class="mb-4">
+                        <h6>Filter</h6>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search within">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6>Colors</h6>
+                        <div class="color-palette">
+                            <span style="background-color: #8B0000;"></span>
+                            <span style="background-color: #808080;"></span>
+                            <span style="background-color: #87CEEB;"></span>
+                            <span style="background-color: #32CD32;"></span>
+                            <span style="background-color: #FFA500;"></span>
+                            <span style="background-color: #FFC0CB;"></span>
+                            <span style="background-color: #4B0082;"></span>
+                            <span style="background-color: #000000;"></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6>New In</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="newInCheckbox">
+                            <label class="form-check-label" for="newInCheckbox">New</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6>Materials</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material1">
+                            <label class="form-check-label" for="material1">Synthetic skin (30)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material2">
+                            <label class="form-check-label" for="material2">Synthetic fiber (25)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material3">
+                            <label class="form-check-label" for="material3">Wooden (158)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material4">
+                            <label class="form-check-label" for="material4">Fabric (216)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material5">
+                            <label class="form-check-label" for="material5">Polyurethane (20)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material6">
+                            <label class="form-check-label" for="material6">Viscose (38)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material7">
+                            <label class="form-check-label" for="material7">Natural fiber (15)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material8">
+                            <label class="form-check-label" for="material8">Natural skin (25)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="material9">
+                            <label class="form-check-label" for="material9">Foam (75)</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6>Sale Off</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="saleOffCheckbox">
+                            <label class="form-check-label" for="saleOffCheckbox">Sale off</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h6>Price</h6>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-bold">0₹</span>
+                            <span class="fw-bold">2000₹</span>
+                        </div>
+                        <input type="range" class="form-range price-range-slider" min="0" max="2000" id="priceRange">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" style="background-color: var(--primary-color); border-color: var(--primary-color);">Apply</button>
+                        <button class="btn btn-outline-secondary">CLEAR ALL <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <nav class="nav nav-pills">
+                        <a class="nav-link  text-danger fw-bold" aria-current="page" href="#">All</a>
+                        <a class="nav-link text-dark" href="#">New</a>
+                        <a class="nav-link text-dark" href="#">Offers</a>
+                        <a class="nav-link text-dark" href="#">Delivery in 10 day</a>
+                    </nav>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 product-grid">
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card product-card h-100">
+                            <div class="product-card-img">
+                                <img src="assets/redsofa.png" class="img-fluid" alt="Patio armchair">
+                            </div>
+                            <div class="card-body product-card-body">
+                                <div class="card-title product-card-title">Patio armchair, red</div>
+                                <div class="product-card-price">₹ 666</div>
+                                <p class="card-text product-card-text">
+                                    Armchair in scandinavian design-upholstered with fabric. Mile pattern, Backrest with decorative buttons. Legs in natural wood.
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-add-cart">Add to Cart</a>
+                                    <a href="#" class="btn btn-buy-now">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center my-5">
+                    <a href="#" class="show-more-btn">Show More Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer-main">
         <div class="container">
@@ -228,19 +902,16 @@
     </footer>
 
     <div class="footer-bottom text-center">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between flex-wrap">
             <p class="mb-0">Copyright © 2025</p>
-            <div>
+            <div class="mt-2 mt-md-0">
                 <a href="#">Terms & Conditions</a>
                 <a href="#">Privacy Policy</a>
             </div>
         </div>
     </div>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
