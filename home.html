@@ -11,7 +11,7 @@
         .hero-section {
             position: relative;
             height: 100vh;
-            background-image: url('https://i.ibb.co/6P8vD2K/image-8c0f31.jpg');
+            background-image: url('./assets/home/home_cover.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -274,6 +274,98 @@
             color: #777;
             text-decoration: none;
             margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                text-align: center;
+            }
+
+            .navbar-custom {
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-brand img {
+                height: 30px;
+            }
+
+            .navbar-icons .nav-link {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+            }
+
+            .product-container {
+                padding: 15px;
+            }
+
+            .row.px-5 {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .product-title {
+                font-size: 1.8rem;
+            }
+
+            .price {
+                font-size: 1.5rem;
+            }
+
+            .thumbnail-list {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .thumbnail-list li {
+                margin: 5px;
+            }
+
+            .thumbnail-list img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-main {
+                padding: 30px 0;
+                text-align: center;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom a {
+                margin: 5px 0;
+                display: block;
+                text-align: center;
+            }
+
+            .footer-contact p {
+                margin-bottom: 8px;
+                text-align: center;
+            }
+
+            .footer-links,
+            .footer-social,
+            .footer-newsletter {
+                margin-bottom: 25px;
+                text-align: center;
+            }
+
+            .breadcrumb-container .container {
+                padding: 0 15px;
+            }
+
+            .nav-tabs .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .btn-add-to-cart,
+            .btn-buy-now {
+                font-size: 1rem;
+                padding: 10px;
+            }
         }
 
         .why-choose-us {
@@ -906,7 +998,7 @@
             }
         }
 
-         .testimonials-section h2 {
+        .testimonials-section h2 {
             font-size: 28px;
             font-weight: bold;
             color: #333;
@@ -916,7 +1008,6 @@
             font-size: 16px;
             color: #f56a00;
         }
-
     </style>
 </head>
 
@@ -1039,7 +1130,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="collection-card">
-                        <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" alt="Foster Collection">
+                        <img src="./assets/home/unique1.png" alt="Foster Collection">
                         <div class="card-overlay">
                             Foster Collection
                         </div>
@@ -1048,7 +1139,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="collection-card">
-                        <img src="https://i.ibb.co/b3c9tC2/image-8cf06c-2.jpg" alt="Verandah Collection">
+                        <img src="./assets/home/unique2.png" alt="Verandah Collection">
                         <div class="card-overlay">
                             Verandah Collection
                         </div>
@@ -1057,7 +1148,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="collection-card">
-                        <img src="https://i.ibb.co/bFqYyQG/image-8cf06c-3.jpg" alt="The French Country Collection">
+                        <img src="./assets/home/unique3.png" alt="The French Country Collection">
                         <div class="card-overlay">
                             The French Country Collection
                         </div>
@@ -1096,7 +1187,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/3k5fH9L/image-8d5dbe-1.jpg" alt="Sofa">
+                            <img src="./assets/home/spotlight/1.png" alt="Sofa">
                         </div>
                         <h5 class="card-title">Sofa</h5>
                     </div>
@@ -1105,7 +1196,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/h8sLqfJ/image-8d5dbe-2.jpg" alt="Sofa Bed">
+                            <img src="./assets/home/spotlight/2.png" alt="Sofa Bed">
                         </div>
                         <h5 class="card-title">Sofa bed</h5>
                     </div>
@@ -1114,7 +1205,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/S3JjG2S/image-8d5dbe-3.jpg" alt="Chairs">
+                            <img src="./assets/home/spotlight/3.png" alt="Chairs">
                         </div>
                         <h5 class="card-title">Chairs</h5>
                     </div>
@@ -1123,7 +1214,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/L9p7Y9d/image-8cf06c-4.jpg" alt="Cots">
+                            <img src="./assets/home/spotlight/4.png" alt="Cots">
                         </div>
                         <h5 class="card-title">Cots</h5>
                     </div>
@@ -1132,7 +1223,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/k27r6M7/image-8d5dbe-5.jpg" alt="Console">
+                            <img src="./assets/home/spotlight/5.png" alt="Console">
                         </div>
                         <h5 class="card-title">Console</h5>
                     </div>
@@ -1141,7 +1232,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/q733f5s/image-8d5dbe-6.jpg" alt="Tables">
+                            <img src="./assets/home/spotlight/6.png" alt="Tables">
                         </div>
                         <h5 class="card-title">Tables</h5>
                     </div>
@@ -1150,7 +1241,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/w74Q2Lh/image-8d5dbe-7.jpg" alt="Crockery">
+                            <img src="./assets/home/spotlight/7.png" alt="Crockery">
                         </div>
                         <h5 class="card-title">Crockery</h5>
                     </div>
@@ -1159,7 +1250,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="category-card">
                         <div class="card-img">
-                            <img src="https://i.ibb.co/M9X7r3X/image-8d5dbe-8.jpg" alt="Shoe Rack">
+                            <img src="./assets/home/spotlight/8.png" alt="Shoe Rack">
                         </div>
                         <h5 class="card-title">Shoe rack</h5>
                     </div>
@@ -1194,7 +1285,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="category-card">
-                        <img src="https://i.ibb.co/6P69d0M/image-975d93-1.jpg" alt="Living Room">
+                        <img src="./assets/home/room_1.png" alt="Living Room">
                         <div class="card-text-overlay">
                             Living Room
                         </div>
@@ -1203,7 +1294,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="category-card">
-                        <img src="https://i.ibb.co/s6h36sF/image-975d93-2.jpg" alt="Dining Room">
+                        <img src="./assets/home/room_2.png" alt="Dining Room">
                         <div class="card-text-overlay">
                             Dining Room
                         </div>
@@ -1212,7 +1303,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="category-card">
-                        <img src="https://i.ibb.co/yQn7M3v/image-975d93-3.jpg" alt="Bed Room">
+                        <img src="./assets/home/room_3.png" alt="Bed Room">
                         <div class="card-text-overlay">
                             Bed Room
                         </div>
@@ -1253,11 +1344,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 1 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_1.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/1.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
@@ -1277,11 +1367,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 2 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_2.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/2.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
@@ -1301,11 +1390,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 3 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_3.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/3.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
@@ -1328,11 +1416,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 1 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_1.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/1.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
@@ -1352,11 +1439,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 2 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_2.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/2.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
@@ -1376,11 +1462,10 @@
                             <div class="col-md-4 mb-4">
                                 <!-- Card 3 -->
                                 <div class="review-card-container">
-                                    <img src="https://i.ibb.co/6y1Ff3z/image-8cf06c-1.jpg" class="card-bg-img"
-                                        alt="Background image">
+                                    <img src="./assets/home/room_3.png" class="card-bg-img" alt="Background image">
                                     <div class="review-overlay">
                                         <div class="reviewer-img">
-                                            <img src="https://i.ibb.co/C55XbQz/Ellipse-7.jpg" alt="Reviewer image">
+                                            <img src="./assets/home/profile/3.png" alt="Reviewer image">
                                         </div>
                                         <div class="review-content">
                                             <h6>Prakash</h6>
