@@ -46,7 +46,7 @@
 
         .navbar-brand img {
             height: 40px;
-            filter: brightness(0) invert(1);
+            /* filter: brightness(0) invert(1); */
             /* Makes the logo white */
         }
 
@@ -998,6 +998,192 @@
             }
         }
 
+
+
+
+
+
+
+
+
+        /* Testimonials Section - Mobile Fix */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.review-card-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.review-card-container .card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.review-overlay {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 80%;
+    z-index: 2;
+}
+
+.reviewer-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reviewer-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-content {
+    padding-top: 40px;
+}
+
+.review-content h6 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.review-content small {
+    color: #777;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.review-content p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.rating .fa-star {
+    color: #ff6a00;
+}
+
+.carousel-item {
+    padding: 0 15px;
+}
+
+/* Mobile view - show one card at a time */
+@media (max-width: 768px) {
+    .carousel-item .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    /* Ensure only one card is visible at a time */
+    .carousel-inner .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+    }
+    
+    .carousel-item.active .col-md-4 {
+        display: block;
+    }
+    
+    .carousel-item:not(.active) .col-md-4 {
+        display: none;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff6a00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #e05500;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.carousel-control-prev-icon::before {
+    content: "\276E";
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.carousel-control-next-icon::before {
+    content: "\276F";
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control-prev-icon::before,
+    .carousel-control-next-icon::before {
+        font-size: 1.2rem;
+    }
+}
+
+.testimonials-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonials-section h6 {
+    font-size: 16px;
+    color: #f56a00;
+}
         .testimonials-section h2 {
             font-size: 28px;
             font-weight: bold;
@@ -1331,7 +1517,7 @@
     </section>
 
 
-    <section class="testimonials-section">
+    <section class="testimonials-section mt-5">
         <div class="container">
             <h6>TESTIMONIALS</h6>
             <h2 class="mb-5">Our Client Reviews</h2>
